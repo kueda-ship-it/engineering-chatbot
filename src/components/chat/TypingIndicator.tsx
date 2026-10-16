@@ -1,3 +1,5 @@
+import { Spinner } from '../shared/Spinner'
+
 export function TypingIndicator() {
   return (
     <div className="flex gap-2 mb-4">
@@ -8,16 +10,10 @@ export function TypingIndicator() {
         AI
       </div>
       <div
-        className="px-4 py-3 rounded-2xl rounded-tl-sm flex gap-1.5 items-center"
+        className="px-4 py-3 rounded-2xl rounded-tl-sm flex items-center"
         style={{ background: '#243a63' }}
       >
-        {[0, 1, 2].map(i => (
-          <span
-            key={i}
-            className="w-2 h-2 rounded-full bg-[#4a90d9] animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }}
-          />
-        ))}
+        <Spinner size={16} label="回答を作成中" />
       </div>
     </div>
   )
